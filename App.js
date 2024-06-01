@@ -1,46 +1,74 @@
-import { StyleSheet, Text, View } from "react-native"
+import { StyleSheet, Text, View, Image } from "react-native"
 import React from "react"
 const App = () => {
   return (
-<View style={{ flex: 1}}>
+<View style={{ flex: 1, backgroundColor: "navy"}}>
+<Text style={{
+        flex: 1, 
+        fontSize: 45, color: "royalblue",
+        textAlign: "center",
+        fontWeight: "bold",
+        top: 15,
+      }}>
+      Drakor.ID 
+</Text>
+<View style={{
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center"
+      }}>
+  <Image 
+        source={{uri:`assets/drakor.id.png`}}
+        style={{ 
+        width:135,
+        height: 135,
+        marginBottom: 170,}}/>
+</View>
 <View style={{
       flex: 1,
-      alignItems: "flex-end", //baris
+      alignItems: "center", //baris
       justifyContent: "center", //kolom
-      flexDirection: "row"
-    }}>
-    <View style={{
-      backgroundColor: "plum", width: 180, height: 80,
-      justifyContent: "center",
-      borderRadius: 20,
-      marginRight : 20,
-      marginBottom : 20,
-    }}>
-      <Text style={{
-        fontSize: 30, color: "white",
-        textAlign: "center",
-        fontWeight: "bold"
+      marginBottom: 35,
       }}>
-        Login
-      </Text>
-</View>
+<Text style={{ 
+        fontSize: 15, color: "royalblue",
+        textAlign: "center",
+      }}>
+   E-mail
+</Text>
 <View style={{
-      backgroundColor: "plum", width: 180, height: 80,
+      backgroundColor: "royalblue", width: 150, height: 30,
       justifyContent: "center",
       borderRadius: 20,
-      marginLeft: 20,
-      marginBottom : 20,
-  
-    }}>
-      <Text style={{
-        fontSize: 30, color: "white",
-        textAlign: "center",
-        fontWeight: "bold"
       }}>
-        Register
-      </Text>
 </View>
-    </View>
+<Text style={{ 
+        fontSize: 15, color: "royalblue",
+        textAlign: "center",
+      }}>
+   Password
+</Text>
+<View style={{
+      backgroundColor: "royalblue", width: 150, height: 30,
+      justifyContent: "center",
+      borderRadius: 20,
+      marginBottom :250,
+      }}>
+<View style={{
+      backgroundColor: "royalblue", width: 150, height: 30,
+      justifyContent: "center",
+      borderRadius: 20,
+      marginTop: 110,
+      }}>
+<Text style={{
+      fontSize: 15, color: "black",
+      textAlign: "center"
+      }}>
+    Masuk
+</Text>
 </View>
-  )}
-  export default App
+</View>
+</View>
+</View>
+)}
+export default App
