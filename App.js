@@ -1,24 +1,8 @@
 import { StyleSheet, Text, View, Image } from "react-native"
 import React from "react"
-// import ButtonCustom from './componen/button/button'
+import ButtonCustom from './componen/Button/Button.js'
 const App = () => {
-      const ButtonCustom = ({ color, text }) => {
-            return (
-                  <View style={{
-                        backgroundColor: color , width: 150, height: 30,
-                        justifyContent: "center",
-                        borderRadius: 20,
-                        marginBottom: 20,
-                        }}>
-                              <Text style={{ 
-                              fontSize: 15, color: "RoyalBlue",
-                              textAlign: "center",
-                        }}>
-                    {text}
-                  </Text>
-                  </View>
-            )
-      }
+      
   return (
 <View style={{ flex: 1, backgroundColor: "navy"}}>
 <Text style={{
