@@ -1,6 +1,24 @@
 import { StyleSheet, Text, View, Image } from "react-native"
 import React from "react"
+// import ButtonCustom from './componen/button/button'
 const App = () => {
+      const ButtonCustom = ({ color, text }) => {
+            return (
+                  <View style={{
+                        backgroundColor: color , width: 150, height: 30,
+                        justifyContent: "center",
+                        borderRadius: 20,
+                        marginBottom: 20,
+                        }}>
+                              <Text style={{ 
+                              fontSize: 15, color: "RoyalBlue",
+                              textAlign: "center",
+                        }}>
+                    {text}
+                  </Text>
+                  </View>
+            )
+      }
   return (
 <View style={{ flex: 1, backgroundColor: "navy"}}>
 <Text style={{
@@ -22,52 +40,17 @@ const App = () => {
         style={{ 
         width:135,
         height: 135,
-        marginBottom: 170,}}/>
+        marginBottom: 85,}}/>
 </View>
 <View style={{
       flex: 1,
       alignItems: "center", //baris
       justifyContent: "center", //kolom
-      marginBottom: 35,
+      marginBottom: 70,
       }}>
-<Text style={{ 
-        fontSize: 15, color: "royalblue",
-        textAlign: "center",
-      }}>
-   E-mail
-</Text>
-<View style={{
-      backgroundColor: "royalblue", width: 150, height: 30,
-      justifyContent: "center",
-      borderRadius: 20,
-      }}>
-</View>
-<Text style={{ 
-        fontSize: 15, color: "royalblue",
-        textAlign: "center",
-      }}>
-   Password
-</Text>
-<View style={{
-      backgroundColor: "royalblue", width: 150, height: 30,
-      justifyContent: "center",
-      borderRadius: 20,
-      marginBottom :250,
-      }}>
-<View style={{
-      backgroundColor: "royalblue", width: 150, height: 30,
-      justifyContent: "center",
-      borderRadius: 20,
-      marginTop: 110,
-      }}>
-<Text style={{
-      fontSize: 15, color: "black",
-      textAlign: "center"
-      }}>
-    Masuk
-</Text>
-</View>
-</View>
+            <ButtonCustom color='royalblue' text='E-mail' />
+            <ButtonCustom color='royalblue' text='Pasword'/>
+            <ButtonCustom color='royalblue' text='Masuk' />
 </View>
 </View>
 )}
