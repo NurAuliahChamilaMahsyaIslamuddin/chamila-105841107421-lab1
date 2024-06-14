@@ -1,41 +1,37 @@
-import { StyleSheet, Text, View, Image } from "react-native"
-import React from "react"
-import ButtonCustom from './componen/Button/Button.js'
-const App = () => {
-      
+import { StyleSheet, Text, View, TextInput } from "react-native-web";
+import React from "react";
+
+
+const TextInputCustom = ({ name, color}) => {
+
   return (
-<View style={{ flex: 1, backgroundColor: "navy"}}>
-<Text style={{
-        flex: 1, 
-        fontSize: 45, color: "royalblue",
-        textAlign: "center",
-        fontWeight: "bold",
-        top: 15,
-      }}>
-      Drakor.ID 
-</Text>
-<View style={{
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center"
-      }}>
-  <Image 
-        source={{uri:`assets/drakor.id.png`}}
-        style={{ 
-        width:135,
-        height: 135,
-        marginBottom: 85,}}/>
-</View>
-<View style={{
-      flex: 1,
-      alignItems: "center", //baris
-      justifyContent: "center", //kolom
-      marginBottom: 70,
-      }}>
-            <ButtonCustom color='royalblue' text='E-mail' />
-            <ButtonCustom color='royalblue' text='Pasword'/>
-            <ButtonCustom color='royalblue' text='Masuk' />
-</View>
-</View>
-)}
-export default App
+      <TextInput
+      placeholder={`Masukkan ${name}`}
+      style={{
+        height: 40,
+        width: 200,
+        bordeColor: "gray",
+        borderWidth: 1,
+        borderRadius: 10,
+        marginBottom: 10,
+        paddingLeft: 10,
+        color: color,
+      }}
+      />
+  )
+}
+const App = () => {
+
+return (
+  <View style={{
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  }}>
+
+  <TextInputCustom name="Username" color="black" />
+  <TextInputCustom name="Password" color="red" />
+  </View>
+)
+}
+export default App
