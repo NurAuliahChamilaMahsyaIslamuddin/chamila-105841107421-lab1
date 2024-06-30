@@ -372,7 +372,11 @@ import { useFonts } from "expo-font";
 
 const App = () => {
   const [fontLoaded, notFound] = useFonts ({
-    'MetroBold' : require('./assets/fonts/Metropolis-Bold.otf')
+    'MetroBold' : require('./assets/fonts/Metropolis-Bold.otf'),
+    'MetroMedium' : require('./assets/fonts/Metropolis-Medium.otf'),
+    'MetroLight' : require('./assets/fonts/Metropolis-Light.otf'),
+    'MetroSemiBold' : require('./assets/fonts/Metropolis-SemiBold.otf'),
+    'MetroBlack' : require('./assets/fonts/Metropolis-Black.otf'),
   })
   if(!fontLoaded) return <View>
       <Text>Font tidak ditemukan</Text>
@@ -384,8 +388,28 @@ return (
     justifyContent:'center',
   }}>
     <Text style={{
-      fontSize:15
+      fontSize:20
     }}>Font Biasa</Text>
+    <Text style={{
+      fontSize:20,
+      fontFamily:'MetroBold'
+    }}>Font Metro Bold</Text>
+    <Text style={{
+      fontSize:20,
+      fontFamily:'MetroLight'
+    }}>Font Metro Light</Text>
+    <Text style={{
+      fontSize:20,
+      fontFamily:'MetroMedium'
+    }}>Font Metro Medium</Text>
+    <Text style={{
+      fontSize:20,
+      fontFamily:'MetroSemiBold'
+    }}>Font Metro Semi Bold</Text>
+    <Text style={{
+      fontSize:20,
+      fontFamily:'MetroBlack'
+    }}>Font Metro Black</Text>
   </View> 
 )
 }
