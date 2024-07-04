@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, TextInput, Image } from "react-native";
 import React from "react";
+import { useFonts } from "expo-font";
 
 const TextInputCustom = ({ name, color}) => {
   return (
@@ -13,6 +14,7 @@ const TextInputCustom = ({ name, color}) => {
         marginBottom: 10,
         paddingLeft: 10,
         color: color,
+        fontFamily:'MetroMedium'
       }}
       />
   )
@@ -31,6 +33,7 @@ const ButtonCustom = ({color, text}) => {
         textAlign:'center',
         fontSize:15,
         color:'white',
+        fontFamily:'MetroBold'
       }}>{text}
       </Text>
     </View>
@@ -38,6 +41,16 @@ const ButtonCustom = ({color, text}) => {
 }
 
 const App = () => {
+  const [fontLoaded, notFound] = useFonts ({
+    'MetroBold' : require('./assets/fonts/Metropolis-Bold.otf'),
+    'MetroMedium' : require('./assets/fonts/Metropolis-Medium.otf'),
+    'MetroLight' : require('./assets/fonts/Metropolis-Light.otf'),
+    'MetroSemiBold' : require('./assets/fonts/Metropolis-SemiBold.otf'),
+    'MetroBlack' : require('./assets/fonts/Metropolis-Black.otf'),
+  })
+  if(!fontLoaded) return <View>
+      <Text>Font tidak ditemukan</Text>
+    </View>
 return (
   <View style={{
     flex:1, backgroundColor:'#F5F5F5',
@@ -46,7 +59,8 @@ return (
     <View style={{
       flex:1,
       justifyContent:'flex-start',
-      alignItems:'flex-start'
+      alignItems:'flex-start',
+      fontFamily:'MetroLight'
     }}>
       <Text style={{
         padding:15,
@@ -61,7 +75,9 @@ return (
       alignSelf:'center',
       paddingHorizontal:16
     }}>
-      <Text>Please, enter your email address. You will receive a link to create a new password via email.</Text>
+      <Text style={{
+        fontFamily:'MetroMedium'
+      }}>Please, enter your email address. You will receive a link to create a new password via email.</Text>
     </View>
 
   <View style={{
