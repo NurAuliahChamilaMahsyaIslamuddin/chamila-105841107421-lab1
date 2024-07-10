@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput, Image } from "react-native";
+import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { useFonts } from "expo-font";
 
@@ -8,13 +8,13 @@ const TextInputCustom = ({ name, color}) => {
       placeholder={` ${name}`}
       style={{
         height: 64,
-        width: 344,
-        bordeColor: "gray",
-        borderWidth: 0.2,
+        width: '90%',
+        borderColor: 'gray',
+        borderWidth: 1,
         marginBottom: 10,
         paddingLeft: 10,
-        color: color,
-        fontFamily:'MetroBold'
+        borderRadius: 15,
+        color: color
       }}
       />
   )
@@ -33,20 +33,20 @@ const ButtonCustom = ({color, text}) => {
         textAlign:'center',
         fontSize:15,
         color:'white',
-        fontFamily:'MetroMedium'
+        fontFamily:'MetroBold'
       }}>{text}
       </Text>
     </View>
   )
 }
 
-const App = () => {
+const SignUpPages = ({navigation}) => {
   const [fontLoaded, notFound] = useFonts ({
-    'MetroBold' : require('./assets/fonts/Metropolis-Bold.otf'),
-    'MetroMedium' : require('./assets/fonts/Metropolis-Medium.otf'),
-    'MetroLight' : require('./assets/fonts/Metropolis-Light.otf'),
-    'MetroSemiBold' : require('./assets/fonts/Metropolis-SemiBold.otf'),
-    'MetroBlack' : require('./assets/fonts/Metropolis-Black.otf'),
+    'MetroBold' : require('../fonts/Metropolis-Bold.otf'),
+    'MetroMedium' : require('../fonts/Metropolis-Medium.otf'),
+    'MetroLight' : require('../fonts/Metropolis-Light.otf'),
+    'MetroSemiBold' : require('../fonts/Metropolis-SemiBold.otf'),
+    'MetroBlack' : require('../fonts/Metropolis-Black.otf'),
   })
   if(!fontLoaded) return <View>
       <Text>Font tidak ditemukan</Text>
@@ -63,11 +63,11 @@ return (
     }}>
       <Text style={{
         padding:15,
-        top:60,
-        fontSize:30,
+        top: 12,
+        fontSize:34,
         fontWeight: 'bold',
-        fontFamily:'MetroBold'
-      }}>Login</Text>
+        fontFamily:'MetroSemiBold'
+      }}>Sign Up</Text>
     </View>
 
   <View style={{
@@ -77,29 +77,33 @@ return (
     bottom:30
 
   }}>
+  <TextInputCustom name="Name" color="#222222" />
   <TextInputCustom name="Email" color="#222222" />
   <TextInputCustom name="Password" color="#222222" />
   </View>
 
-  <View style={{
-    flex:1,
-    right:24,
-    alignSelf:'flex-end',
-    bottom:30
-  }}>
-    <Text style={{
-      fontFamily:'MetroMedium'
-    }}>Forgot Password?</Text>
-  </View>
-
+  <TouchableOpacity  style={{
+    flex: 1,
+    alignSelf: 'flex-end',
+    buttom: 50,
+    right: 20,
+  }}onPress={() => navigation.navigate('Login')}>
+    <Text Style={{
+      color: '#222222',
+      fontSize: 15,
+      buttom: 30,
+      fontFamily: "metroMedium"
+    }}>Already have an account?</Text>
+    </TouchableOpacity>
 <View style={{
   justifyContent:'flex-end',
   alignItems:'center',
   width:'100%',
   height:50,
-  bottom:180
+  bottom:100,
+  
  }}>
-  <ButtonCustom color="red" text="LOGIN" />
+  <ButtonCustom color="red" text="SIGN UP" />
  </View>
 
  <View style={{
@@ -124,7 +128,7 @@ return (
     borderRadius:10,
     padding:10,
   }}>
-    <Image source={require('./assets/img/google.png')}
+    <Image source={require('../img/google.png')}
     style={{
       width:30,
       height:30,
@@ -137,7 +141,7 @@ return (
     borderRadius:10,
     padding:10,
   }}>
-    <Image source={require('./assets/img/facebook.png')}
+    <Image source={require('../img/facebook.png')}
     style={{
       width:30,
       height:30,
@@ -150,4 +154,4 @@ return (
 )
 }
 
-export default App
+export default SignUpPages;

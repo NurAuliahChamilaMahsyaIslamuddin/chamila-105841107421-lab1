@@ -8,13 +8,14 @@ const TextInputCustom = ({ name, color}) => {
       placeholder={` ${name}`}
       style={{
         height: 64,
-        width: 344,
+        width: '90%',
         bordeColor: "gray",
         borderWidth: 0.2,
         marginBottom: 10,
         paddingLeft: 10,
+        borderRadius: 15,
         color: color,
-        fontFamily:'MetroMedium'
+        fontFamily:'MetroBold'
       }}
       />
   )
@@ -33,24 +34,14 @@ const ButtonCustom = ({color, text}) => {
         textAlign:'center',
         fontSize:15,
         color:'white',
-        fontFamily:'MetroBold'
+        fontFamily:'MetroMedium'
       }}>{text}
       </Text>
     </View>
   )
 }
 
-const App = () => {
-  const [fontLoaded, notFound] = useFonts ({
-    'MetroBold' : require('./assets/fonts/Metropolis-Bold.otf'),
-    'MetroMedium' : require('./assets/fonts/Metropolis-Medium.otf'),
-    'MetroLight' : require('./assets/fonts/Metropolis-Light.otf'),
-    'MetroSemiBold' : require('./assets/fonts/Metropolis-SemiBold.otf'),
-    'MetroBlack' : require('./assets/fonts/Metropolis-Black.otf'),
-  })
-  if(!fontLoaded) return <View>
-      <Text>Font tidak ditemukan</Text>
-    </View>
+const Login = () => {
 return (
   <View style={{
     flex:1, backgroundColor:'#F5F5F5',
@@ -62,12 +53,12 @@ return (
       alignItems:'flex-start'
     }}>
       <Text style={{
-        padding:15,
-        top:60,
+        padding:30,
+        top:10,
         fontSize:30,
         fontWeight: 'bold',
         fontFamily:'MetroBold'
-      }}>Sign Up</Text>
+      }}>Login</Text>
     </View>
 
   <View style={{
@@ -77,7 +68,6 @@ return (
     bottom:30
 
   }}>
-  <TextInputCustom name="Name" color="#222222" />
   <TextInputCustom name="Email" color="#222222" />
   <TextInputCustom name="Password" color="#222222" />
   </View>
@@ -90,7 +80,7 @@ return (
   }}>
     <Text style={{
       fontFamily:'MetroMedium'
-    }}>Already have an account?</Text>
+    }}>Forgot Password?</Text>
   </View>
 
 <View style={{
@@ -98,9 +88,9 @@ return (
   alignItems:'center',
   width:'100%',
   height:50,
-  bottom:180
+  bottom:80,
  }}>
-  <ButtonCustom color="red" text="SIGN UP" />
+  <ButtonCustom color="red" text="Login" />
  </View>
 
  <View style={{
@@ -125,7 +115,7 @@ return (
     borderRadius:10,
     padding:10,
   }}>
-    <Image source={require('./assets/img/google.png')}
+    <Image source={require('../img/google.png')}
     style={{
       width:30,
       height:30,
@@ -138,7 +128,7 @@ return (
     borderRadius:10,
     padding:10,
   }}>
-    <Image source={require('./assets/img/facebook.png')}
+    <Image source={require('../img/facebook.png')}
     style={{
       width:30,
       height:30,
@@ -151,4 +141,4 @@ return (
 )
 }
 
-export default App
+export default Login

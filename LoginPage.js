@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TextInput } from "react-native";
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from "react-native";
 import React from "react";
 
 
@@ -42,7 +42,7 @@ const TextInputCustom = ({name, color}) => {
         )
     }
     
-    const LoginPage = () => {
+    const LoginPage = ({navigation}) => {
     return (
         <View style={{
             flex:1,
@@ -72,15 +72,17 @@ const TextInputCustom = ({name, color}) => {
             <TextInputCustom name="Password" color="black" />
 
             </View>
-            <Text style={{
-                fontSize: 12,
-                marginTop: 20,
-                marginRight:30,
-                marginBottom: 40,
-                alignSelf: "flex-end",
-            }}>
-                Forgot your Password?
-            </Text>
+            <TouchableOpacity style={{
+    alignSelf: 'flex-end',
+    buttom: 50,
+    right: 20,
+  }}onPress={() => navigation.navigate('Forgot')}>
+    <Text Style={{
+      color: '#222222',
+      fontSize: 15,
+      buttom: 10,
+    }}>Forgot Password</Text>
+    </TouchableOpacity>
             <View style={{
                 alignSelf:'center',
                 alignItems:'center',

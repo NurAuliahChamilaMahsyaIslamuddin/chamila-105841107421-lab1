@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput, Image } from "react-native";
+import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { useFonts } from "expo-font";
 
@@ -42,11 +42,11 @@ const ButtonCustom = ({color, text}) => {
 
 const App = () => {
   const [fontLoaded, notFound] = useFonts ({
-    'MetroBold' : require('./assets/fonts/Metropolis-Bold.otf'),
-    'MetroMedium' : require('./assets/fonts/Metropolis-Medium.otf'),
-    'MetroLight' : require('./assets/fonts/Metropolis-Light.otf'),
-    'MetroSemiBold' : require('./assets/fonts/Metropolis-SemiBold.otf'),
-    'MetroBlack' : require('./assets/fonts/Metropolis-Black.otf'),
+    'MetroBold' : require('../fonts/Metropolis-Bold.otf'),
+    'MetroMedium' : require('../fonts/Metropolis-Medium.otf'),
+    'MetroLight' : require('../fonts/Metropolis-Light.otf'),
+    'MetroSemiBold' : require('../fonts/Metropolis-SemiBold.otf'),
+    'MetroBlack' : require('../fonts/Metropolis-Black.otf'),
   })
   if(!fontLoaded) return <View>
       <Text>Font tidak ditemukan</Text>
