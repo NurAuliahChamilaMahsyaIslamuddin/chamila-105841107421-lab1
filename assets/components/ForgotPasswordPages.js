@@ -7,13 +7,15 @@ const TextInputCustom = ({ name, color}) => {
       <TextInput
       placeholder={` ${name}`}
       style={{
-        height: 64,
-        width: 344,
+        height: 40,
+        width: '90%',
         bordeColor: "gray",
-        borderWidth: 0.2,
-        marginBottom: 10,
+        borderWidth: 1,
+        marginTop: 45,
         paddingLeft: 10,
+        borderRadius: 15,
         color: color,
+
         fontFamily:'MetroMedium'
       }}
       />
@@ -23,9 +25,10 @@ const TextInputCustom = ({ name, color}) => {
 const ButtonCustom = ({color, text}) => {
   return (
     <View style={{
-      flex:1,
+      flex: 1,
       width:'90%',
-      borderRadius:20,
+      top: 20,
+      borderRadius:30,
       backgroundColor:color,
       justifyContent:'center'
     }}>
@@ -40,7 +43,7 @@ const ButtonCustom = ({color, text}) => {
   )
 }
 
-const App = () => {
+const ForgotPasswordPages = () => {
   const [fontLoaded, notFound] = useFonts ({
     'MetroBold' : require('../fonts/Metropolis-Bold.otf'),
     'MetroMedium' : require('../fonts/Metropolis-Medium.otf'),
@@ -60,18 +63,20 @@ return (
       flex:1,
       justifyContent:'flex-start',
       alignItems:'flex-start',
-      fontFamily:'MetroLight'
+      fontFamily:'MetroMedium'
     }}>
       <Text style={{
         padding:15,
-        top:60,
-        fontSize:30,
+        top:10,
+        left: 12,
+        fontSize:34,
         fontWeight: 'bold'
       }}>Forgot Password</Text>
     </View>
 
     <View style={{
-      bottom:140,
+      bottom:119,
+      left: 18,
       alignSelf:'center',
       paddingHorizontal:16
     }}>
@@ -103,4 +108,4 @@ return (
 )
 }
 
-export default App
+export default ForgotPasswordPages;

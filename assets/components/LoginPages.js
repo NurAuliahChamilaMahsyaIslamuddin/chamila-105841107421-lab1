@@ -1,21 +1,22 @@
-import { StyleSheet, Text, View, TextInput, Image } from "react-native";
+import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { useFonts } from "expo-font";
+
 
 const TextInputCustom = ({ name, color}) => {
   return (
       <TextInput
       placeholder={` ${name}`}
       style={{
-        height: 64,
+        height: 40,
         width: '90%',
         bordeColor: "gray",
-        borderWidth: 0.2,
+        borderWidth: 1,
         marginBottom: 10,
         paddingLeft: 10,
-        borderRadius: 15,
+        borderRadius: 20,
         color: color,
-        fontFamily:'MetroBold'
+        fontFamily:'MetroSemiBold'
       }}
       />
   )
@@ -41,7 +42,14 @@ const ButtonCustom = ({color, text}) => {
   )
 }
 
-const Login = () => {
+const LoginPages = ({navigation}) => {
+  const [fontLoaded, notFound] = useFonts ({
+    'MetroBold' : require('../fonts/Metropolis-Bold.otf'),
+    'MetroMedium' : require('../fonts/Metropolis-Medium.otf'),
+    'MetroLight' : require('../fonts/Metropolis-Light.otf'),
+    'MetroSemiBold' : require('../fonts/Metropolis-SemiBold.otf'),
+    'MetroBlack' : require('../fonts/Metropolis-Black.otf'),
+  })
 return (
   <View style={{
     flex:1, backgroundColor:'#F5F5F5',
@@ -54,7 +62,7 @@ return (
     }}>
       <Text style={{
         padding:30,
-        top:10,
+        top:8,
         fontSize:30,
         fontWeight: 'bold',
         fontFamily:'MetroBold'
@@ -65,23 +73,27 @@ return (
     flex: 1,
     justifyContent: "center",
     alignItems:'center',
-    bottom:30
+    bottom:30,
 
   }}>
   <TextInputCustom name="Email" color="#222222" />
   <TextInputCustom name="Password" color="#222222" />
   </View>
 
-  <View style={{
-    flex:1,
-    right:24,
-    alignSelf:'flex-end',
-    bottom:30
-  }}>
-    <Text style={{
-      fontFamily:'MetroMedium'
-    }}>Forgot Password?</Text>
-  </View>
+<TouchableOpacity style={{
+  flex: 1,
+  alignSelf: 'flex-end',
+  buttom:  50,
+  right: 20,
+}}onPress={() => navigation.navigate('Forgot')}>
+  <Text Style={{
+      color: '#222222',
+      fontSize: 15,
+      buttom: 50,
+      right: 12,
+      fontFamily: "metroMedium"
+    }}>Forgot Password ?</Text>
+</TouchableOpacity>
 
 <View style={{
   justifyContent:'flex-end',
@@ -141,4 +153,4 @@ return (
 )
 }
 
-export default Login
+export default LoginPages;

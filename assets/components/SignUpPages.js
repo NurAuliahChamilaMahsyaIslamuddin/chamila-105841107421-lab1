@@ -10,11 +10,12 @@ const TextInputCustom = ({ name, color}) => {
         height: 64,
         width: '90%',
         borderColor: 'gray',
-        borderWidth: 1,
+        borderWidth: 1.5,
         marginBottom: 10,
         paddingLeft: 10,
-        borderRadius: 15,
-        color: color
+        borderRadius: 20,
+        color: color,
+        fontFamily: 'MetroSemiBold'
       }}
       />
   )
@@ -48,9 +49,6 @@ const SignUpPages = ({navigation}) => {
     'MetroSemiBold' : require('../fonts/Metropolis-SemiBold.otf'),
     'MetroBlack' : require('../fonts/Metropolis-Black.otf'),
   })
-  if(!fontLoaded) return <View>
-      <Text>Font tidak ditemukan</Text>
-    </View>
 return (
   <View style={{
     flex:1, backgroundColor:'#F5F5F5',
@@ -65,8 +63,9 @@ return (
         padding:15,
         top: 12,
         fontSize:34,
+        left: 12,
         fontWeight: 'bold',
-        fontFamily:'MetroSemiBold'
+        fontFamily:'MetroBold'
       }}>Sign Up</Text>
     </View>
 
@@ -85,13 +84,13 @@ return (
   <TouchableOpacity  style={{
     flex: 1,
     alignSelf: 'flex-end',
-    buttom: 50,
+    buttom: 20,
     right: 20,
   }}onPress={() => navigation.navigate('Login')}>
     <Text Style={{
       color: '#222222',
       fontSize: 15,
-      buttom: 30,
+      buttom: 35,
       fontFamily: "metroMedium"
     }}>Already have an account?</Text>
     </TouchableOpacity>
