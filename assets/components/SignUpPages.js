@@ -7,15 +7,16 @@ const TextInputCustom = ({ name, color}) => {
       <TextInput
       placeholder={` ${name}`}
       style={{
-        height: 64,
+        height: 65,
         width: '90%',
         borderColor: 'gray',
-        borderWidth: 1.5,
         marginBottom: 10,
-        paddingLeft: 10,
+        borderWidth: 1,
+        padding: 10,
+        shadowRadius: 1,
         borderRadius: 20,
         color: color,
-        fontFamily: 'MetroSemiBold'
+        fontFamily: 'MetroMedium'
       }}
       />
   )
@@ -57,13 +58,13 @@ return (
     <View style={{
       flex:1,
       justifyContent:'flex-start',
-      alignItems:'flex-start'
+      alignItems:'flex-start',
+      top: 2
     }}>
       <Text style={{
-        padding:15,
-        top: 12,
+        marginTop: 15,
         fontSize:34,
-        left: 12,
+        left: 15,
         fontWeight: 'bold',
         fontFamily:'MetroBold'
       }}>Sign Up</Text>
@@ -99,7 +100,7 @@ return (
   alignItems:'center',
   width:'100%',
   height:50,
-  bottom:100,
+  bottom:80,
   
  }}>
   <ButtonCustom color="red" text="SIGN UP" />

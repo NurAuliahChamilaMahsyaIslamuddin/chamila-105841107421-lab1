@@ -16,7 +16,7 @@ const TextInputCustom = ({ name, color}) => {
         paddingLeft: 10,
         borderRadius: 20,
         color: color,
-        fontFamily:'MetroSemiBold'
+        fontFamily:'MetroMedium'
       }}
       />
   )
@@ -55,19 +55,21 @@ return (
     flex:1, backgroundColor:'#F5F5F5',
   }}>
 
-    <View style={{
+<View style={{
       flex:1,
       justifyContent:'flex-start',
-      alignItems:'flex-start'
+      alignItems:'flex-start',
+      top: 2
     }}>
       <Text style={{
-        padding:30,
-        top:8,
-        fontSize:30,
+        marginTop: 15,
+        fontSize:34,
+        left: 15,
         fontWeight: 'bold',
         fontFamily:'MetroBold'
       }}>Login</Text>
     </View>
+
 
   <View style={{
     flex: 1,

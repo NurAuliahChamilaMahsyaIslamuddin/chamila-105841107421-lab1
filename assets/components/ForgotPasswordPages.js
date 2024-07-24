@@ -27,8 +27,8 @@ const ButtonCustom = ({color, text}) => {
     <View style={{
       flex: 1,
       width:'90%',
-      top: 20,
-      borderRadius:30,
+      top: 50,
+      borderRadius:27,
       backgroundColor:color,
       justifyContent:'center'
     }}>
@@ -75,7 +75,7 @@ return (
     </View>
 
     <View style={{
-      bottom:119,
+      bottom:99,
       left: 18,
       alignSelf:'center',
       paddingHorizontal:16
@@ -89,7 +89,7 @@ return (
     flex: 1,
     justifyContent: "center",
     alignItems:'center',
-    bottom:220
+    bottom:180
   }}>
   <TextInputCustom name="Email" color="#222222" />
   </View>
@@ -99,7 +99,7 @@ return (
   alignItems:'center',
   width:'100%',
   height:50,
-  bottom:280
+  bottom:265
  }}>
   <ButtonCustom color="red" text="SEND" />
  </View>
